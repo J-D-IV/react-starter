@@ -1,0 +1,39 @@
+body {
+  background-color: grey;
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
+}
+
+.entry {
+  border: sienna;
+  color: white;
+  /* text-align: left; */
+  margin: 20px;
+  text-transform: uppercase; 
+  line-height: 50px; 
+  text-spacing:2px;
+  text-shadow: 3px 0px 2px black;
+}
+
+.movieContainer {
+  text-align: center;
+  padding: 5px, 5px;
+  font-size: 20px;
+}
+
+.title {
+  color: #ffffff; 
+  font-family: 'Raleway';
+  color: pink;
+  font: sans-serif; 
+  font-size: 62px; font-weight: 800; 
+  line-height: 72px; 
+  margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase; 
+  box-shadow: 5px 5px 5px white;
+  /* text-shadow: 2px 2px 2px white; */
+  text-shadow: 5px 0px 2px black;
+  /* text-shadow: 2, 0, 0, 2; */
+}
