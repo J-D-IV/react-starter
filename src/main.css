@@ -51,9 +51,12 @@ body {
   margin-top: 5px;
   margin-bottom: 0px;
 }
-.button1:hover {
-  background-color: #000000; /* Green */
-  color: white;
+.button1:hover {background-color: #080808}
+
+.button1:active {
+  background-color: #080808;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 .button2 {
   height: 25px;
@@ -70,9 +73,12 @@ body {
   text-align:center;
   transition: all 0.2s;
 }
-.button2:hover {
-  background-color: #000000; /* Green */
-  color: white;
+.button2:hover {background-color: #080808}
+
+.button2:active {
+  background-color: #080808;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 .title {
   color: #ffffff; 

@@ -8,7 +8,7 @@ console.log(props);
       <button className="button2" onClick={() => {
         let text = document.getElementById("addMovieButton").value.toUpperCase();
         props.addMovieToList(text);
-      }}/>
+      }}>Add</button>
     </div>
   )
 }
