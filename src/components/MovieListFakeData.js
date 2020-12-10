@@ -1,11 +1,11 @@
 import React from 'react';
 
 var movies = [
-  {title: 'Mean Girls'},
-  {title: 'Hackers'},
-  {title: 'The Grey'},
-  {title: 'Sunshine'},
-  {title: 'Ex Machina'},
+  {title: 'MEAN GIRLS'},
+  {title: 'HACKERS'},
+  {title: 'THE GREY'},
+  {title: 'SUNSHINE'},
+  {title: 'EX MACHINA'},
 ];
 
 export default movies

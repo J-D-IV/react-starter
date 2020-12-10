@@ -1,10 +1,15 @@
 body {
   background-color: grey;
-  max-width: 500px;
+  /* max-width: 500px; */
   margin: auto;
   padding: 10px;
+  display: grid;
+  /* grid-template-columns: [1-start]20%, [1-end 2-start]80%, [2-end 3-start]20%; */
 }
-
+.searchBar {
+  text-align: center;
+  width: auto;
+}
 .entry {
   border: sienna;
   color: white;
@@ -20,6 +25,7 @@ body {
   text-align: center;
   padding: 5px, 5px;
   font-size: 20px;
+
 }
 
 .title {
