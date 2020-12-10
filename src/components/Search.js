@@ -4,14 +4,17 @@ var Search = (props) => {
   
   return (
     <div>
-        <input id="input1"/>
-        <button onClick={() => {
-          let text = document.getElementById("input1").value;
-          // let text = document.getElementById('inputFromSearch').value;
-          console.log(text);
-          props.searchVideos(text);
-        }}/>
+        <input placeholder="search" id="input1"/>
+        <button className="button1" onClick={() => {
+            let text = document.getElementById("input1").value.toUpperCase();
+            props.searchVideos(text);
+            // let text = document.getElementById('inputFromSearch').value;
+            // console.log(text);
+            }}>
+            <i class="fa fa-search"></i>
+        </button>
     </div>
+
   );
 };
 

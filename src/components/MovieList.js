@@ -2,7 +2,7 @@ import movies from './MovieListFakeData.js';
 import MovieListEntry from './MovieListEntry.js';
 import React from 'react';
 var MovieList = (props) => {
-  console.log(props);
+  console.log('movie list -' ,props);
 
   return (
     <div>
