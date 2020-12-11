@@ -10,54 +10,85 @@ class App extends React.Component {
     //let arrayOfMovies = [];
     super(props);
     this.state = {
-     data: [],
-     movies: [],
-     searchResultMovies: []
-    //  clickedSerch: false
+     data: movies,
+     movies: movies
     };
   };
+  
   componentDidMount() {
-    this.setState({
-      data: movies
-    })
+    // renderToWatchMovies();
+    //console.log('before setState -- ', this.state);
+  }
+
+  toggleMovie(movie) {
+    movie.watched = !movie.watched;
   }
 
   searchVideos(text) {
+    event.preventDefault();
     let result = [];
-    for (let i = 0; i < this.state.movies.length; i++) {
-      // iterate over the movies 
-      let currentTitle = this.state.movies[i].title;
-      // set current title to current movie's title
+    for (let i = 0; i < this.state.data.length; i++) {
+      let currentTitle = this.state.data[i].title;
       if (currentTitle.indexOf(text) >= 0) {
-        // check if the searched title is in our movies
-        result.push({title: this.state.movies[i].title})
-        // if so push it to the result array in the format required
+        result.push({title: this.state.data[i].title})
       }
     }
     if (result.length === 0) {
       result = [{title: "Sorry! No results found :("}]
     }
-
     this.setState({
       searchResultMovies: result
-      // movies: result
     })
   }
 
-  addMovieToList(text) {
-    let movie = {title: text};
-    // console.log(this.state.movies);
-    this.state.searchResultMovies.push(movie);
-    this.state.movies.push(movie)
-    // console.log(this.state.movies);
+  renderWatchedMovies() {
+    let result = [];
+    console.log(this.state.data);
+    for (let i = 0; i < this.state.data.length; i++) {
+      if (this.state.data[i].watched) {
+        result.push(this.state.data[i])
+      }
+    }
     this.setState({
-      searchResultMovies: this.state.searchResultMovies,
+      movies: result
+    })
+  }
+
+  renderToWatchMovies() {
+    let result = [];
+    console.log(this.state.data);
+    for (let i = 0; i < this.state.data.length; i++) {
+      if (!this.state.data[i].watched) {
+        result.push(this.state.data[i])
+      }
+    }
+    this.setState({
+      movies: result
+    })
+  }
+ 
+  addMovieToList(text) {
+    event.preventDefault();
+    let movie = {title: text, watched:false};
+    this.state.data.push(movie);
+    this.setState({
+      data: this.state.data,
       movies: this.state.movies
     })
   }
+
   render() {
     return(
       <div>
+        <div className="watchAndToWatchButtons">
+          <button className="watchedListButton" onClick={() => {
+            this.renderWatchedMovies();
+          }
+          }>WATCHED</button>
+          <button className="toWatchListButton" onClick={() => {
+            this.renderToWatchMovies();
+          }}>TO WATCH</button>
+        </div>
         <div className="addMovieBar">
           <AddMovie addMovieToList={this.addMovieToList.bind(this)}/>
         </div>
@@ -65,7 +96,7 @@ class App extends React.Component {
           <Search searchVideos={this.searchVideos.bind(this)} />
         </div>
         <div className='movieContainer'>
-           <MovieList movies={this.state.searchResultMovies}/>
+           <MovieList movies={this.state.movies} toggleMovie={this.toggleMovie.bind(this)}/>
         </div>
       </div>
       

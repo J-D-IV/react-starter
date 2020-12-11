@@ -14,6 +14,26 @@ body {
   text-align: center;
   width: auto;
 }
+.watchAndToWatchButtons {
+  text-align: center;
+  width: auto;
+  margin-bottom: 10px;
+  
+}
+.watchedListButton {
+  background-color: pink;
+  color: white;
+}
+.watchedListButton:hover {
+  background-color: #080808
+}
+.toWatchListButton {
+  background-color: pink;
+  color: white
+}
+.toWatchListButton:hover {
+  background-color: #080808
+}
 .entry {
   border: sienna;
   color: white;
